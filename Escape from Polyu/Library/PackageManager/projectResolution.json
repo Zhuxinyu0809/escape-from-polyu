@@ -9,6 +9,16 @@
     "/Applications/Unity/Hub/Editor/6000.0.57f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/BuiltInPackagesCombined.sha1"
   ],
   "outputs": {
+    "com.meta.xr.simulator@78.0.0": {
+      "name": "com.meta.xr.simulator",
+      "displayName": "Meta XR Simulator",
+      "resolvedPath": "/Users/ngnokhin/Documents/Unity Projects/Escape from Polyu/Escape from Polyu/Library/PackageCache/com.meta.xr.simulator@59c045caf4ce",
+      "fingerprint": "59c045caf4ce4ec4ae7531f2467f958d0692faae",
+      "editorCompatibility": "2022.3.15f1",
+      "version": "78.0.0",
+      "source": "registry",
+      "testable": false
+    },
     "com.unity.collab-proxy@2.9.3": {
       "name": "com.unity.collab-proxy",
       "displayName": "Unity Version Control",
@@ -75,6 +85,26 @@
       "fingerprint": "6279e2b7c4858e56cca7f367cd38c49ef66778c9",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.9.7",
+      "source": "registry",
+      "testable": false
+    },
+    "com.unity.xr.interaction.toolkit@3.0.8": {
+      "name": "com.unity.xr.interaction.toolkit",
+      "displayName": "XR Interaction Toolkit",
+      "resolvedPath": "/Users/ngnokhin/Documents/Unity Projects/Escape from Polyu/Escape from Polyu/Library/PackageCache/com.unity.xr.interaction.toolkit@7e188ec401ea",
+      "fingerprint": "7e188ec401eaff99ad6b91aca36b2f657e06be7a",
+      "editorCompatibility": "2021.3.0a1",
+      "version": "3.0.8",
+      "source": "registry",
+      "testable": false
+    },
+    "com.unity.xr.management@4.5.2": {
+      "name": "com.unity.xr.management",
+      "displayName": "XR Plugin Management",
+      "resolvedPath": "/Users/ngnokhin/Documents/Unity Projects/Escape from Polyu/Escape from Polyu/Library/PackageCache/com.unity.xr.management@f589c7ba49ff",
+      "fingerprint": "f589c7ba49ff63cadb66fd77cdfb09f538674e1a",
+      "editorCompatibility": "2021.3.0a1",
+      "version": "4.5.2",
       "source": "registry",
       "testable": false
     },
@@ -348,6 +378,36 @@
       "resolvedPath": "/Applications/Unity/Hub/Editor/6000.0.57f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.hierarchycore",
       "version": "1.0.0",
       "source": "builtin",
+      "testable": false
+    },
+    "com.unity.xr.core-utils@2.5.2": {
+      "name": "com.unity.xr.core-utils",
+      "displayName": "XR Core Utilities",
+      "resolvedPath": "/Users/ngnokhin/Documents/Unity Projects/Escape from Polyu/Escape from Polyu/Library/PackageCache/com.unity.xr.core-utils@5b282bc7378d",
+      "fingerprint": "5b282bc7378d257fcefbecad81c641874f85d033",
+      "editorCompatibility": "2021.3.0f1",
+      "version": "2.5.2",
+      "source": "registry",
+      "testable": false
+    },
+    "com.unity.xr.legacyinputhelpers@2.1.12": {
+      "name": "com.unity.xr.legacyinputhelpers",
+      "displayName": "XR Legacy Input Helpers",
+      "resolvedPath": "/Users/ngnokhin/Documents/Unity Projects/Escape from Polyu/Escape from Polyu/Library/PackageCache/com.unity.xr.legacyinputhelpers@b7579e86f3b4",
+      "fingerprint": "b7579e86f3b456c909fda6b875fba7ab1eeb1322",
+      "editorCompatibility": "2019.4.0a1",
+      "version": "2.1.12",
+      "source": "registry",
+      "testable": false
+    },
+    "com.unity.mathematics@1.3.2": {
+      "name": "com.unity.mathematics",
+      "displayName": "Mathematics",
+      "resolvedPath": "/Users/ngnokhin/Documents/Unity Projects/Escape from Polyu/Escape from Polyu/Library/PackageCache/com.unity.mathematics@8017b507cc74",
+      "fingerprint": "8017b507cc74bf0a1dd14b18aa860569f807314d",
+      "editorCompatibility": "2021.3.0a1",
+      "version": "1.3.2",
+      "source": "registry",
       "testable": false
     },
     "com.unity.ide.visualstudio@2.0.23": {
