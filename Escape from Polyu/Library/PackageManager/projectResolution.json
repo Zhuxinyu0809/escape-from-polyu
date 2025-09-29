@@ -108,6 +108,16 @@
       "source": "registry",
       "testable": false
     },
+    "com.unity.xr.openxr@1.15.1": {
+      "name": "com.unity.xr.openxr",
+      "displayName": "OpenXR Plugin",
+      "resolvedPath": "/Users/ngnokhin/Documents/Unity Projects/Escape from Polyu/Escape from Polyu/Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1",
+      "fingerprint": "05fb1a7d75d118139c283c8d76b7f99a655364a8",
+      "editorCompatibility": "2021.3.0a1",
+      "version": "1.15.1",
+      "source": "registry",
+      "testable": false
+    },
     "com.unity.modules.accessibility@1.0.0": {
       "name": "com.unity.modules.accessibility",
       "displayName": "Accessibility",
