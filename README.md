@@ -173,11 +173,12 @@
 
 **5.1 Basic Information of Team Members**
 
-| Number   | Name     | Student ID | Core Participation Direction  |
-| -------- | -------- | -------- | -------- |
-| 1        | WU Nuoxuan （Group Leader） | 25108265g | Overall Game Planner/Main Program Developer |
-| 2        | PENG Liangqian | 25051229g | Unity Developer
-| 3        | FU Zhuohan | 25094202g | Narrative Design (Storyline/Easter Eggs)
-| 4        | WU Jiajia | 25095001g | Art and Modeling Design (Scenes/Abnormal Elements)
-| 5        | YAN Yan | 25115006g | Art and Modeling Design (Scenes/Abnormal Elements)
-| 6        | ZHU Xinyu | 25118165g | Version Control/Document Management/Test
+| Number   | Name     | Student ID | Core Participation Direction  |  Github ID
+| -------- | -------- | -------- | -------- |-------- |
+| 1        | WU Nuoxuan （Group Leader） | 25108265g | Overall Game Planner/Main Program Developer | Nokhin
+| 2        | PENG Liangqian | 25051229g | Unity Developer | Hiso-maso
+| 3        | FU Zhuohan | 25094202g | Narrative Design (Storyline/Easter Eggs) | 727
+| 4        | WU Jiajia | 25095001g | Art and Modeling Design (Scenes/Abnormal Elements) | Jujube-Wu
+| 5        | YAN Yan | 25115006g | Art and Modeling Design (Scenes/Abnormal Elements) | yan030619 
+| 6        | ZHU Xinyu | 25118165g | Version Control/Document Management/Test| Zhuxinyu0809
+
