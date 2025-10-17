@@ -148,9 +148,22 @@ The core objective of the game is for the player to assume the role of a student
  moderate, and the existing programming and modeling skills of the team
  can cover the requirements.
 
-**5 Project Planning and Division of Labor**
+**5 Initial puzzle and anomaly design**
 
-**5.1 Basic Information of Team Members**
+**5.1 Abnormal lighting**
+
+• Trigger: Halfway down the hallway, the lights start flickering.
+• Solution: Find the electrical box and flip the switch to restore power.
+
+**5.2 Chair Abnormality**
+
+• Trigger: Entering a classroom, I found that the chairs were all in the sky.
+• Solution: Put the chair back on the ground.
+
+
+**6 Project Planning and Division of Labor**
+
+**6.1 Basic Information of Team Members**
 
 | Number   | Name     | Student ID | Core Participation Direction  |  Github ID
 | -------- | -------- | -------- | -------- |-------- |
