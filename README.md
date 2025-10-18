@@ -14,7 +14,14 @@ Every time the player attempts to reach the exit at the end of the corridor, the
 
 The game recreates familiar campus scenes and uses a first-person VR perspective to heighten the tension of being trapped in an endless loop, creating an immersive gaming experience.
 
-**2.2 Game Objective**
+**2.2 Game Logic**
+
+1. When the player first escapes the corridor, they find themselves back at the starting point, realizing there's a loop.
+2. Following system prompts, the player gradually discovers anomalies in the corridor (lighting, house numbers, notice boards, etc.).
+3. Each time an anomaly is fixed, the loop mechanism weakens (meaning the anomaly won't reappear in the next loop).
+4. Once all anomalies are fixed, the loop stops, and the player successfully escapes the corridor.
+
+**2.3 Game Objective**
 
 The core objective of the game is for the player to assume the role of a student trapped in a "looping corridor." By correcting anomalies and solving all puzzles, they overcome the spatial reset mechanism, ultimately escaping from the end of the corridor and returning to the real campus. In the empty corridor of the PolyU campus, by
  triggering the exit reset multiple times, the player will understand
@@ -34,7 +41,7 @@ The core objective of the game is for the player to assume the role of a student
  the progress of the core puzzle - solving, but makes the overall
  experience more in line with the sense of exploring a real campus.
 
-**2.3 Game Interaction Design**
+**2.4 Game Interaction Design**
 
  Based on the interactive characteristics of VR hardware devices, this
  game combines the head - mounted display (HMD) and controllers to
@@ -54,7 +61,7 @@ The core objective of the game is for the player to assume the role of a student
 
    The controller simulates hand gestures: players can press buttons to trigger switches (e.g., triggering remote control buttons or turning on a switch), use rays to simulate opening doors, picking up items, and moving objects, and provide tactile feedback through vibration when the player triggers specific events (e.g., locking a door).
 
-   **2.4 Game Scenes**
+ **2.5 Game Scenes**
 
    **Core space:** The Loop Corridor, which is modeled with reference
    to the real buildings of the PolyU campus, including:
