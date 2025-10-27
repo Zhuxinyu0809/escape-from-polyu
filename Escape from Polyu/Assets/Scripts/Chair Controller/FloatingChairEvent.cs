@@ -1,11 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 
 public class FloatingChairEvent : MonoBehaviour, IEvent
 {
     [Header("Event Objects")]
     public Transform chairsContainer;
+
+    [Header("Whiteboard Settings")]
+    public TextMeshPro whiteboardText;
+    public string completionMessage = "Class Started!";
 
     // 櫈仔列表
     private List<InteractableChair> allChairs;
@@ -28,6 +33,8 @@ public class FloatingChairEvent : MonoBehaviour, IEvent
         {
             Debug.Log($"一共需要擺平 {allChairs.Count} 張櫈仔");
         }
+
+        whiteboardText.text = "Something Wrong...";
     }
 
     // 由於呢個事件係被動嘅，所以 StartEvent 唔使做嘢
@@ -52,6 +59,9 @@ public class FloatingChairEvent : MonoBehaviour, IEvent
         {
             Debug.Log("所有櫈仔都已經落地，事件完成");
             IsCompleted = true;
+
+            // 事件完成時，更新白板內容
+            whiteboardText.text = completionMessage;
 
             EventManager.instance.CheckAllEventsCompletion();
         }
