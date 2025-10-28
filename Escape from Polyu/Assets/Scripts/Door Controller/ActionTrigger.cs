@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ActionTrigger : MonoBehaviour
 {
-    public enum TriggerAction { EnterStartSpace, EnterCorridor, EnterEndSpace, StartLightFlickerEvent }
+    public enum TriggerAction { EnterStartSpace, EnterCorridor, EnterEndSpace}
     public TriggerAction actionToPerform;
 
     private CorridorLoopManager loopManager;
@@ -33,9 +33,6 @@ public class ActionTrigger : MonoBehaviour
                     break;
                 case TriggerAction.EnterEndSpace:
                     loopManager.PlayerEnteredEndSpace();
-                    break;
-                case TriggerAction.StartLightFlickerEvent:
-                    FindFirstObjectByType<LightFlickerEvent>()?.StartEvent();
                     break;
             }
         }
