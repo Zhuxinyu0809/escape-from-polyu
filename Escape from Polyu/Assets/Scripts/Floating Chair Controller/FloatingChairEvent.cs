@@ -12,6 +12,10 @@ public class FloatingChairEvent : MonoBehaviour, IEvent
     public TextMeshPro whiteboardText;
     public string completionMessage = "Class Started!";
 
+    [Header("Chain of Event")]
+    [Tooltip("飄浮櫈事件完成後，要啓動下一個事件 (ErasableQuizEvent)")]
+    public ErasableQuizEvent quizEventToTrigger;
+
     // 櫈仔列表
     private List<InteractableChair> allChairs;
 
@@ -35,6 +39,11 @@ public class FloatingChairEvent : MonoBehaviour, IEvent
         }
 
         whiteboardText.text = "Something Wrong...";
+
+        if (quizEventToTrigger == null)
+        {
+            quizEventToTrigger = FindFirstObjectByType<ErasableQuizEvent>();
+        }
     }
 
     // 由於呢個事件係被動嘅，所以 StartEvent 唔使做嘢
@@ -62,6 +71,7 @@ public class FloatingChairEvent : MonoBehaviour, IEvent
 
             // 事件完成時，更新白板內容
             whiteboardText.text = completionMessage;
+            quizEventToTrigger.StartEvent();
 
             EventManager.instance.CheckAllEventsCompletion();
         }
