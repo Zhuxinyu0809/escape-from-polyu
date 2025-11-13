@@ -15,7 +15,7 @@ public class MottoQuizEvent : MonoBehaviour, IEvent
     public void StartEvent()
     {
         if (IsCompleted) return;
-        Debug.Log("Motto Even】事件開始! 凳變色");
+        Debug.Log("Motto Event事件開始! 凳變色");
         if (chairController != null)
         {
             chairController.SetWarningPattern();
