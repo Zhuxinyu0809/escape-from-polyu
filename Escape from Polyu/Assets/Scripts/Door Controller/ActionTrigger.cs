@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ActionTrigger : MonoBehaviour
 {
-    public enum TriggerAction { EnterStartSpace, EnterCorridor, EnterEndSpace }
+    public enum TriggerAction { EnterStartSpace, EnterCorridor, EnterEndSpace}
     public TriggerAction actionToPerform;
 
     private CorridorLoopManager loopManager;

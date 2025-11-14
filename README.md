@@ -8,31 +8,22 @@
 
 **2.1 Game Concept**
 
- \"Escape from PolyU\" is a loop - puzzle VR game set on the PolyU
- campus. As a student, the player accidentally pushes an unmarked door
- in the teaching building after class and enters the \"Loop
- Corridor\" - a place that replicates elements of the real campus
- corridor such as classroom door plates and bulletin boards, yet is
- completely empty.
- 
- Every time the player tries to walk towards the emergency exit at the
- end of the corridor, a space reset is triggered, sending the player
- back to the starting position. Only by restoring abnormalities and
- solving puzzles according to system prompts can the player escape the
- corridor and return to the real campus.
+ \"Escape from Polytechnic University\" is a looping puzzle VR game set on a Polytechnic University campus. The player takes on the role of a student who, due to heavy traffic before class, takes the elevator to the wrong floor. Opening the wrong door, they enter the \"looping corridor\" —a space that replicates elements of a real campus corridor (such as classroom signs and bulletin boards), but is empty.
 
- By recreating the familiar campus scene, using a VR first - person
- perspective, and combining with looping after - class bells and
- flickering light sound effects, the game enhances the sense of tension
- of being trapped in an inescapable loop and creates an immersive
- gaming experience.
+Every time the player attempts to reach the exit at the end of the corridor, the space resets, returning them to their starting position. Only by correcting anomalies and solving puzzles based on clues can the player escape the corridor and return to the real campus.
 
-**2.2 Game Objective**
+The game recreates familiar campus scenes and uses a first-person VR perspective to heighten the tension of being trapped in an endless loop, creating an immersive gaming experience.
 
- The core objective of the game is for the player, as a student in the
- \"Loop Corridor\", to break the space reset mechanism by restoring> scene abnormalities and solving all puzzles, and finally successfully
- escape through the emergency exit at the end of the corridor to return
- to the real campus. In the empty corridor of the PolyU campus, by
+**2.2 Game Logic**
+
+1. When the player first escapes the corridor, they find themselves back at the starting point, realizing there's a loop.
+2. Following system prompts, the player gradually discovers anomalies in the corridor (lighting, house numbers, notice boards, etc.).
+3. Each time an anomaly is fixed, the loop mechanism weakens (meaning the anomaly won't reappear in the next loop).
+4. Once all anomalies are fixed, the loop stops, and the player successfully escapes the corridor.
+
+**2.3 Game Objective**
+
+The core objective of the game is for the player to assume the role of a student trapped in a "looping corridor." By correcting anomalies and solving all puzzles, they overcome the spatial reset mechanism, ultimately escaping from the end of the corridor and returning to the real campus. In the empty corridor of the PolyU campus, by
  triggering the exit reset multiple times, the player will understand
  the rule that \"infinite loops occur if puzzles are not solved\".
  Then, according to system prompts, the player locates and fixes
@@ -50,7 +41,7 @@
  the progress of the core puzzle - solving, but makes the overall
  experience more in line with the sense of exploring a real campus.
 
-**2.3 Game Interaction Design**
+**2.4 Game Interaction Design**
 
  Based on the interactive characteristics of VR hardware devices, this
  game combines the head - mounted display (HMD) and controllers to
@@ -68,14 +59,9 @@
 
 2. Controller and Button Interaction
 
-   the controller is used to simulate hand operations: players can
-   press buttons to trigger switches (such as pulling down the power
-   switch or pressing the door-opening button), use gesture simulation
-   to open doors, pick up items and move objects, and when players
-   trigger specific events (such as a locked door), the controller will
-   provide haptic feedback through vibration.
+   The controller simulates hand gestures: players can press buttons to trigger switches (e.g., triggering remote control buttons or turning on a switch), use rays to simulate opening doors, picking up items, and moving objects, and provide tactile feedback through vibration when the player triggers specific events (e.g., locking a door).
 
-   **2.4 Game Scenes**
+ **2.5 Game Scenes**
 
    **Core space:** The Loop Corridor, which is modeled with reference
    to the real buildings of the PolyU campus, including:
@@ -84,7 +70,7 @@
 
    **.** Bulletin boards, desks, and corridor lights
 
-   **.** Emergency exit door (the end - point of the player\'s puzzle -
+   **.** Door (the end - point of the player\'s puzzle -
    solving)
 
    **Atmosphere creation:**
@@ -169,9 +155,22 @@
  moderate, and the existing programming and modeling skills of the team
  can cover the requirements.
 
-**5 Project Planning and Division of Labor**
+**5 Initial puzzle and anomaly design**
 
-**5.1 Basic Information of Team Members**
+**5.1 Abnormal lighting**
+
+• Trigger: Halfway down the hallway, the lights start flickering.
+• Solution: Find the electrical box and flip the switch to restore power.
+
+**5.2 Chair Abnormality**
+
+• Trigger: Entering a classroom, I found that the chairs were all in the sky.
+• Solution: Put the chair back on the ground.
+
+
+**6 Project Planning and Division of Labor**
+
+**6.1 Basic Information of Team Members**
 
 | Number   | Name     | Student ID | Core Participation Direction  |  Github ID
 | -------- | -------- | -------- | -------- |-------- |
