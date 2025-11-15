@@ -1,33 +1,23 @@
 using UnityEngine;
 using System.Collections;
 
-/// <summary>
-/// 掛喺一間房嘅門嘅父物件上。
-/// 統一管理呢間房所有門嘅開啓 (使用 Hinge Joint)。
-/// </summary>
 public class RoomDoorController : MonoBehaviour
 {
     [System.Serializable]
     public class DoorInfo
     {
-        [Tooltip("門上面嘅 Hinge Joint 組件")]
         public HingeJoint doorHinge; 
-        [Tooltip("呢隻門係左門定右門？")]
         public enum DoorSide { Left, Right }
         public DoorSide side;
 
-        // ======== 新增內容：儲存 Rigidbody ========
         [HideInInspector] public Rigidbody doorRigidbody;
-        // ===================================
     }
 
-    [Header("呢間房嘅所有門")]
+    [Header("Doors")]
     public DoorInfo[] doorsInRoom;
     
-    [Header("Hinge Joint 設定")]
-    [Tooltip("開門嘅彈簧力度")]
+    [Header("Hinge Joint Settings")]
     public float springForce = 100f;
-    [Tooltip("彈簧嘅阻尼，防止震盪")]
     public float springDamper = 10f;
 
     private bool doorsAreOpen = false;
@@ -42,26 +32,15 @@ public class RoomDoorController : MonoBehaviour
                 continue;
             }
 
-            // ======== 新增內容：獲取並鎖定 Rigidbody ========
-            // 1. 獲取 Rigidbody
             door.doorRigidbody = door.doorHinge.GetComponent<Rigidbody>();
-            if (door.doorRigidbody == null)
-            {
-                Debug.LogError($"門 {door.doorHinge.gameObject.name} 缺少 Rigidbody！", this);
-                continue;
-            }
-            
-            // 2. 將門設置為 Kinematic (鎖定狀態)，咁就唔會被撞開
             door.doorRigidbody.isKinematic = true;
-            // =============================================
 
-            // (即使係 Kinematic 狀態，我哋依然可以預先設置好 Hinge Joint)
             JointSpring spring = door.doorHinge.spring;
             JointLimits limits = door.doorHinge.limits;
 
             spring.spring = springForce;
             spring.damper = springDamper;
-            spring.targetPosition = 0; // 初始位置係關閉 (0度)
+            spring.targetPosition = 0; // 初始位置係關閉
             door.doorHinge.spring = spring;
             door.doorHinge.useSpring = true;
 
@@ -89,14 +68,12 @@ public class RoomDoorController : MonoBehaviour
         {
             if (door.doorHinge == null || door.doorRigidbody == null) continue;
 
-            // ======== 新增內容：解鎖 Rigidbody ========
-            // 1. 解鎖！令門可以被物理引擎（同 Hinge Joint）控制
+            // 解鎖，令門可以被物理引擎同 Hinge Joint控制
             door.doorRigidbody.isKinematic = false;
-            // =============================================
 
             JointSpring spring = door.doorHinge.spring;
 
-            // 2. 設置新嘅目標角度
+            // 設置新嘅目標角度
             if (door.side == DoorInfo.DoorSide.Left)
             {
                 spring.targetPosition = -90f; 

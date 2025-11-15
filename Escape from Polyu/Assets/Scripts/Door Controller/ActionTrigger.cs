@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ActionTrigger : MonoBehaviour
 {
-    public enum TriggerAction { EnterStartSpace, EnterCorridor, EnterEndSpace}
+    public enum TriggerAction { EnterStartSpace, EnterCorridor, EnterEndSpace, BlockCorridor1, BlockCorridor2, TriggerEndGame }
     public TriggerAction actionToPerform;
 
     private CorridorLoopManager loopManager;
@@ -33,6 +33,12 @@ public class ActionTrigger : MonoBehaviour
                     break;
                 case TriggerAction.EnterEndSpace:
                     loopManager.PlayerEnteredEndSpace();
+                    break;
+                case TriggerAction.BlockCorridor1:
+                    loopManager.PlayerInBlockCorridor1();
+                    break;
+                case TriggerAction.BlockCorridor2:
+                    loopManager.PlayerInBlockCorridor2();
                     break;
             }
         }

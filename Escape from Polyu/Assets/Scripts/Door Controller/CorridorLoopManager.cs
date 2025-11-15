@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CorridorLoopManager : MonoBehaviour
 {
-    [Header("Plyer")]
+    [Header("Player")]
     public Transform xrOrigin;
 
     [Header("Anchor")]
@@ -11,8 +11,6 @@ public class CorridorLoopManager : MonoBehaviour
     public Transform endSpaceAnchor;
 
     [Header("Doors")]
-    public Transform startDoor1Left;
-    public Transform startDoor1Right;
     public Transform startDoor2Left;
     public Transform startDoor2Right;
     public Transform endDoor1Left;
@@ -23,8 +21,11 @@ public class CorridorLoopManager : MonoBehaviour
     [Header("Game Logic")]
     public bool conditionMet = false;
 
-    private Quaternion startDoor1Left_CloseRotation;
-    private Quaternion startDoor1Right_CloseRotation;
+    [Header("Collider Triggers")]
+    public Collider strangeCollider0;
+    public Collider strangeCollider1;
+    public Collider strangeCollider2;
+
     private Quaternion startDoor2Left_CloseRotation;
     private Quaternion startDoor2Right_CloseRotation;
     private Quaternion endDoor1Left_CloseRotation;
@@ -38,8 +39,6 @@ public class CorridorLoopManager : MonoBehaviour
     void Start()
     {
         // 記錄門關閉時嘅初始 rotation
-        startDoor1Left_CloseRotation = startDoor1Left.localRotation;
-        startDoor1Right_CloseRotation = startDoor1Right.localRotation;
         startDoor2Left_CloseRotation = startDoor2Left.localRotation;
         startDoor2Right_CloseRotation = startDoor2Right.localRotation;
         endDoor1Left_CloseRotation = endDoor1Left.localRotation;
@@ -48,22 +47,25 @@ public class CorridorLoopManager : MonoBehaviour
         // 設定 end door 2 開啓時嘅 rotation
         endDoor2Left_OpenRotation = endDoor2Left.localRotation * Quaternion.Euler(0, -90, 0);
         endDoor2Right_OpenRotation = endDoor2Right.localRotation * Quaternion.Euler(0, 90, 0);
+
+        // Make sure 三個 Strange Collider 都係停用狀態
+        strangeCollider0.enabled = false;
+        strangeCollider1.enabled = false;
+        strangeCollider2.enabled = false;
     }
 
     public void PlayerEnteredStartSpace()
     {
-        // 自動關閉 start door 1
-        Debug.Log("玩家進入 start space, 關閉 start door 1");
-        StartCoroutine(MoveDoor(startDoor1Left, startDoor1Left_CloseRotation));
-        StartCoroutine(MoveDoor(startDoor1Right, startDoor1Right_CloseRotation));
+        //
     }
 
     public void PlayerEnteredCorridor()
     {
         // 自動關閉 start door 2
-        Debug.Log("玩家進入 corridor, 關閉 start door 2");
+        Debug.Log("玩家進入 corridor, 關閉 start door 2, 激活 Strange Collider 0");
         StartCoroutine(MoveDoor(startDoor2Left, startDoor2Left_CloseRotation));
         StartCoroutine(MoveDoor(startDoor2Right, startDoor2Right_CloseRotation));
+        strangeCollider0.enabled = true;
     }
 
     public void PlayerEnteredEndSpace()
@@ -82,6 +84,12 @@ public class CorridorLoopManager : MonoBehaviour
         {
             Debug.Log("條件未完成，回到 start space");
             StartCoroutine(TeleportPlayer());
+            Debug.Log("停用 Strange Collider 0");
+            strangeCollider0.enabled = false;
+            Debug.Log("停用 Strange Collider 1");
+            strangeCollider1.enabled = false;
+            Debug.Log("停用 Strange Collider 2");
+            strangeCollider2.enabled = false;
         }
         else
         {
@@ -91,6 +99,18 @@ public class CorridorLoopManager : MonoBehaviour
             // 停用 EndSpaceTrigger
             FindFirstObjectByType<ActionTrigger>()?.gameObject.SetActive(false);
         }
+    }
+
+    public void PlayerInBlockCorridor1()
+    {
+        Debug.Log("激活 Strange Collider 1");
+        strangeCollider1.enabled = true;
+    }
+
+    public void PlayerInBlockCorridor2()
+    {
+        Debug.Log("激活 Strange Collider 2");
+        strangeCollider2.enabled = true;
     }
 
     private IEnumerator TeleportPlayer()
@@ -113,9 +133,9 @@ public class CorridorLoopManager : MonoBehaviour
         playerIsInEndSpace = false;
     }
 
-    private IEnumerator MoveDoor(Transform door, Quaternion targetRotation)
+    private IEnumerator MoveDoor(Transform door, Quaternion targetRotation, float duration = 1.0f)
     {
-        float duration = 1.0f; // 關門所需時間
+        //float duration = 1.0f; // 關門所需時間
         float elapsedTime = 0f;
         Quaternion startingRotation = door.localRotation;
 
